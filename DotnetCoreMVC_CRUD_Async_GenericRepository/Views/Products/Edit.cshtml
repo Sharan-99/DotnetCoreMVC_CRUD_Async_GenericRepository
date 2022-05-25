@@ -1,0 +1,42 @@
+﻿@model DotnetCoreMVC_CRUD_Async_GenericRepository.Models.Product
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Product</h1>
+
+@using (Html.BeginForm("Edit", "Products"))
+{
+    @Html.HiddenFor(p => p.Id)
+
+    @Html.LabelFor(p => p.Name)
+    <br />
+    @Html.EditorFor(p => p.Name)
+    <br />
+    @Html.ValidationMessageFor(p => p.Name)
+    <br />
+
+    @Html.LabelFor(p => p.Price)
+    <br />
+    @Html.EditorFor(p => p.Price)
+    <br />
+    @Html.ValidationMessageFor(p => p.Price)
+    <br />
+
+    <input type="submit" value="Change" />
+}
+
+
+
+
+
+@section StylesAndScripts{
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+}
+

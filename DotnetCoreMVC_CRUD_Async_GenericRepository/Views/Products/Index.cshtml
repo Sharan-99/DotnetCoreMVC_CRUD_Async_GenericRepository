@@ -1,0 +1,29 @@
+﻿@model List<DotnetCoreMVC_CRUD_Async_GenericRepository.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Products List</h2>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var prod in Model)
+    {
+        <tr>
+            <td>@prod.Id</td>
+            <td>@prod.Name</td>
+            <td>@prod.Price</td>
+            <td>
+                @Html.ActionLink("Details", "Details", "Products", new { id = prod.Id })
+                @Html.ActionLink("Edit", "Edit", "Products", new { id = prod.Id })
+                @Html.ActionLink("Delete", "Delete", "Products", new { id = prod.Id })
+            </td>
+        </tr>
+    }
+</table>
+
